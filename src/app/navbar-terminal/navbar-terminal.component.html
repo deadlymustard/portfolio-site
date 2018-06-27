@@ -1,0 +1,15 @@
+<div class="terminalPanel">
+  <div class="terminalLog">
+    <div *ngFor="let line of logLines" class="logLine">
+        <p>[user@{{userIpAddr}}]$ {{line.input}}</p>
+        <div *ngFor="let output of line.output" class="logOutput">
+          <p>{{line.output}}</p>
+        </div>
+    </div>
+  </div>
+  <div class="terminalLog terminalEntry">
+      <p>[user@{{userIpAddr}}]$
+        <input #terminalInputRef [(ngModel)]="terminalInput" (keyup.enter)="interpretInput(terminalInputRef.value)"type="text" name="terminalForm" autofocus>
+      </p>
+  </div>
+</div>

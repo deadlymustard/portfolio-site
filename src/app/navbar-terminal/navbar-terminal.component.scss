@@ -1,0 +1,31 @@
+@import '../../styles.scss';
+
+.terminalPanel {
+    height: 20vh;
+    background-color: darkslategrey;
+    border-bottom: 1px solid $nav-terminal-accent-color;
+}
+
+.terminalLog {
+    p {
+        margin: 0;
+        font-family: 'Consolas';
+        font-size: 10pt;
+        color: $nav-terminal-accent-color;
+    }
+}
+
+.terminalEntry {
+    input {
+        border: 0;
+        padding: 0;
+        margin-left: 0px;
+        background-color: darkslategray; 
+        font-family: 'Consolas';
+        font-size: 10pt;
+        color: $nav-terminal-accent-color;
+    }
+    input:focus, input:focus{
+        outline: none;
+    }
+}
