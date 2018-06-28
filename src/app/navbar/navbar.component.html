@@ -1,23 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">rs</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" [class.opened]="showTerminal" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">about</a>
+        <a class="nav-link" routerLink="/about" routerLinkActive="active">about</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">resume</a>
+        <a class="nav-link" routerLink="/resume" routerLinkActive="active">resume</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">portfolio</a>
+        <a class="nav-link" routerLink="/portfolio" routerLinkActive="active">portfolio</a>
       </li>
     </ul>
   </div>
   <form class="form-inline">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-code" aria-hidden="true"></i></button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="showTerminal = !showTerminal"><i class="fa fa-code" aria-hidden="true"></i></button>
   </form>
 </nav>
-<app-navbar-terminal></app-navbar-terminal>
+<app-navbar-terminal (showTerminal)="toggleTerminal($event)" [hidden]="!showTerminal"></app-navbar-terminal>

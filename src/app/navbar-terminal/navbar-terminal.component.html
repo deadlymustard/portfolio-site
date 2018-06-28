@@ -1,15 +1,25 @@
-<div class="terminalPanel">
+<div #terminalPanel class="terminalPanel">
+  <span class="pulse float-right"></span>
   <div class="terminalLog">
     <div *ngFor="let line of logLines" class="logLine">
-        <p>[user@{{userIpAddr}}]$ {{line.input}}</p>
+        <p>{{line.input}}</p>
         <div *ngFor="let output of line.output" class="logOutput">
-          <p>{{line.output}}</p>
+          <p>{{output}}</p>
         </div>
     </div>
   </div>
-  <div class="terminalLog terminalEntry">
+  <div *ngIf="!interactiveMode" #terminalEntry class="terminalLog terminalEntry">
       <p>[user@{{userIpAddr}}]$
-        <input #terminalInputRef [(ngModel)]="terminalInput" (keyup.enter)="interpretInput(terminalInputRef.value)"type="text" name="terminalForm" autofocus>
+        <input #terminalInputRef [(ngModel)]="terminalInput" (keyup.enter)="interpretInput(terminalInputRef.value)" type="text" name="terminalForm" autofocus>
       </p>
+  </div>
+  <div *ngIf="interactiveMode" #terminalEntryInteractive class="terminalLog terminalEntry">
+    <p>{{interactivePrompt}}
+      <input #terminalInputRef [(ngModel)]="terminalInput" (keyup.enter)="interpretPromptInput(terminalInputRef.value)" (keyup.control.c)="setInteractiveMode(false)" type="text" name="terminalForm" autofocus>
+    </p>
+  </div>
+  <div *ngIf="editMode" #terminalEdit class="terminalLog terminalEntry">
+    <p>Ctrl + Shift + Z to exit EDIT mode</p>
+    <textarea #editInputRef [(ngModel)]="editWindowText" (keyup.control.shift.z)="setEditMode(false)" autofocus autosize></textarea>
   </div>
 </div>
