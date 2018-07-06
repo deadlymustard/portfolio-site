@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { DirectoryService } from './directory.service';
+import { DirectoryService } from './terminal.service';
 
 describe('DirectoryService', () => {
   beforeEach(() => {

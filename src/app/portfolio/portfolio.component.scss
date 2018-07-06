@@ -1,0 +1,25 @@
+@import '../../styles.scss';
+@import '../app.component';
+
+:host ::ng-deep h2 {
+  margin-bottom: 20px;
+}
+
+:host ::ng-deep h2:hover {
+  cursor: pointer;
+}
+
+:host ::ng-deep .card {
+  border-radius: 0;
+}
+
+:host ::ng-deep .card-img-top {
+  border-radius: 0;
+}
+
+
+:host ::ng-deep .card-vanity-bar {
+  min-height: 3px;
+  background: #4c8080;
+}
+

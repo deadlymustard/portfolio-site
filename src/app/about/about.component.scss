@@ -1,0 +1,19 @@
+@import "../../styles";
+
+:host ::ng-deep .image-tiles {
+  padding: 0;
+}
+
+:host ::ng-deep img {
+  width: 150px;
+  height: auto;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 450px) {
+  :host ::ng-deep img {
+    width: 125px;
+  }
+}
+

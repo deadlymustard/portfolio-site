@@ -1,6 +1,6 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 
-import { DirectoryGuard } from './directory.guard';
+import { DirectoryGuard } from './terminal.guard';
 
 describe('DirectoryGuard', () => {
   beforeEach(() => {

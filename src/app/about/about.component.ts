@@ -1,4 +1,4 @@
-import {AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {terminal} from '../../data/terminal';
 
 @Component({
@@ -6,25 +6,22 @@ import {terminal} from '../../data/terminal';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class AboutComponent implements OnInit, AfterViewChecked {
 
 
   aboutTextHtml: string;
 
-  constructor() { }
+  constructor(private cd: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
-    this.aboutTextHtml = terminal.fs['/'].ref.about.ref['about.txt'].text.reduce((acc, str) => `${acc}${str}`);
+    this.aboutTextHtml = terminal.fs['/'].ref.about.ref['about.html'].text.reduce((acc, str) => `${acc}${str}`);
   }
 
   ngAfterViewChecked(): void {
-    this.aboutTextHtml = terminal.fs['/'].ref.about.ref['about.txt'].text.reduce((acc, str) => `${acc}${str}`);
-
+    this.aboutTextHtml = terminal.fs['/'].ref.about.ref['about.html'].text.reduce((acc, str) => `${acc}${str}`);
+    this.cd.detectChanges();
   }
 
-  ngAfterViewInit(): void {
-    this.aboutTextHtml = terminal.fs['/'].ref.about.ref['about.txt'].text.reduce((acc, str) => `${acc}${str}`);
-
-  }
 
 }

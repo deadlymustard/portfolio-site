@@ -12,12 +12,14 @@ import { ResumeComponent } from './resume/resume.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RootComponent } from './root/root.component';
-import {DirectoryGuard} from './directory.guard';
+import {TerminalGuard} from './terminal.guard';
 import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {Angular2ImageGalleryModule} from 'angular2-image-gallery';
 
 
 const appRoutes: Routes = [
-  { path : '', component: RootComponent, canActivate: [DirectoryGuard]},
+  { path : '', component: RootComponent, canActivate: [TerminalGuard]},
   { path: 'about', component: AboutComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'portfolio', component: PortfolioComponent },
@@ -41,10 +43,12 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    NgbModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    TextareaAutosizeModule
+    TextareaAutosizeModule,
+    Angular2ImageGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

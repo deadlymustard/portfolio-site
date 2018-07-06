@@ -1,0 +1,26 @@
+@import '../styles';
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:300');
+
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+
+:host ::ng-deep h2 {
+  color: #4c8080;
+  margin-top: 40px;
+}
+
+:host ::ng-deep p {
+  font-size: 10pt;
+}
+
+:host ::ng-deep a {
+  color: $nav-terminal-accent-color;
+}
+
+:host ::ng-deep a:hover {
+  color: #4c8080;
+}
+
+
+

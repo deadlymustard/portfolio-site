@@ -1,0 +1,58 @@
+@import '../../styles.scss';
+@import '../app.component.scss';
+
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+h5, h6 {
+  position: relative;
+}
+
+hr {
+  margin: 5px 0 10px 0;
+}
+
+p {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+li {
+  font-size: 12px;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.progress {
+  margin: 7px 0 7px 0;
+}
+
+.badge{
+  border-radius: 0;
+  margin-right: 5px;
+}
+
+.resume-entry {
+  margin-bottom: 10px;
+}
+
+:host ::ng-deep .resume-side-text {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

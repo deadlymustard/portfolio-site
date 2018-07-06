@@ -1,2 +1,25 @@
+@import '../../animations';
+
+.vanity-bar {
+  min-height: 5px;
+  background: #4c8080;
+}
+
+.terminal-slider {
+  background: #4c8080;
+  text-align: center;
+
+  .fa {
+    font-size: 20px;
+    color: darkslategray;
+  }
+
+}
+
+.terminal-slider:hover{
+  cursor: pointer;
+}
+
+
 
 

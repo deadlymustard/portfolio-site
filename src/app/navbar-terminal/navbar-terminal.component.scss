@@ -15,7 +15,6 @@
   height: 148px;
   padding: 2px;
   background-color: darkslategrey;
-  border-bottom: 1px solid $nav-terminal-accent-color;
   overflow-y: scroll;
 
 }
@@ -74,6 +73,20 @@
 
 }
 
+.pulse-frame {
+  position: fixed;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  right: 0px;
+  margin-top: -10px;
+  margin-right: -10px;
+  border-radius: 25% !important;
+  background: #343a40 !important;
+  cursor: pointer;
+  //box-shadow: 0 0 0 rgba(131, 110, 255, 0.4);
+}
+
 .pulse {
   position: fixed;
   display: inline-block;
@@ -86,4 +99,37 @@
   cursor: pointer;
   //box-shadow: 0 0 0 rgba(131, 110, 255, 0.4);
   animation: pulse 2s infinite;
+}
+
+@media only screen and (max-width: 990px) {
+
+  button {
+    background-color: slategray;
+    color: darkslategray;
+    border: none;
+    margin-bottom: 10px;
+  }
+
+  .terminalPanel {
+    font-size: 14px;
+  }
+
+  .terminalLog {
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .terminalEntry {
+    input {
+      font-size: 14px;
+    }
+
+    textarea {
+      font-size: 14px;
+    }
+  }
+
+
+
 }

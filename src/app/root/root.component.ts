@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DirectoryService} from '../directory.service';
+import {TerminalService} from '../terminal.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,11 @@ import {DirectoryService} from '../directory.service';
 export class RootComponent implements OnInit {
 
   constructor(
-    private directoryService: DirectoryService
+    private terminalService: TerminalService
   ) { }
 
   ngOnInit() {
-    this.directoryService.setRootAccess(false);
+
   }
 
 }
