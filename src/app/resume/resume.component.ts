@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-resume',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
+  isMobile = false;
+
   constructor() { }
 
+
   ngOnInit() {
+    this.isMobile = window.innerWidth <= 550;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.isMobile = window.innerWidth <= 550;
   }
 
 }

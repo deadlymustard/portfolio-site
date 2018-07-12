@@ -1,4 +1,4 @@
-<div #terminalPanel class="terminalPanel">
+<div #terminalPanel class="terminalPanel" [class.terminalPanelRoot]="currentDirectory === '/'">
   <span class="pulse float-right"></span>
 
   <div class="terminalLog">
@@ -9,18 +9,18 @@
         </div>
     </div>
   </div>
-  <div *ngIf="!interactiveMode" #terminalEntry class="terminalLog terminalEntry">
+  <div *ngIf="!interactiveMode" #terminalEntry class="terminalLog terminalEntry" [class.terminalEntryRoot]="currentDirectory === '/'">
       <p>[user@{{userIpAddr}}]$
         <input #terminalInputRef [(ngModel)]="terminalInput"
                (keyup.enter)="interpretInput(terminalInputRef.value, true)" (keyup.arrowup)="fetchLastCommand()" type="text" name="terminalForm" autofocus>
       </p>
   </div>
-  <div *ngIf="interactiveMode" #terminalEntryInteractive class="terminalLog terminalEntry">
+  <div *ngIf="interactiveMode" #terminalEntryInteractive class="terminalLog terminalEntry" [class.terminalEntryRoot]="currentDirectory === '/'">
     <p>{{interactivePrompt}}
       <input #terminalInputRef [(ngModel)]="terminalInput" (keyup.enter)="interpretPromptInput(terminalInputRef.value)" (keyup.control.c)="setInteractiveMode(false)" type="text" name="terminalForm" autofocus>
     </p>
   </div>
-  <div *ngIf="editMode" #terminalEdit class="terminalLog terminalEntry">
+  <div *ngIf="editMode" #terminalEdit class="terminalLog terminalEntry" [class.terminalEntryRoot]="currentDirectory === '/'">
     <p *ngIf="!isNavbarMobile">Ctrl + Shift + Z to exit EDIT mode</p>
     <div *ngIf="isNavbarMobile" class="mobile-exit">
       <p>Press [[SAVE]] to exit EDIT mode</p>

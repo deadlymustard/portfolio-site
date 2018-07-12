@@ -1,9 +1,12 @@
 @import '../../styles.scss';
 @import '../../animations.scss';
 
+
+
 ::-webkit-scrollbar {
   width: 0;  /* remove scrollbar space */
   background: transparent;  /* optional: just make scrollbar invisible */
+  display: none;
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
@@ -16,7 +19,10 @@
   padding: 2px;
   background-color: darkslategrey;
   overflow-y: scroll;
+}
 
+.terminalPanelRoot {
+  background-color: rgba(47, 79, 79, .5);
 }
 
 .terminalLog {
@@ -27,6 +33,7 @@
       color: $nav-terminal-accent-color;
   }
 }
+
 
 .terminalEntry {
   textarea {
@@ -61,6 +68,15 @@
   }
 }
 
+.terminalEntryRoot {
+  textarea {
+    background-color: rgba(47, 79, 79, .5);
+  }
+  input {
+    background-color: rgba(47, 79, 79, .5);
+  }
+}
+
 .version {
   position: relative;
   display: inline-block;
@@ -74,8 +90,7 @@
 }
 
 .pulse-frame {
-  position: fixed;
-  display: inline-block;
+  position: static;
   width: 40px;
   height: 40px;
   right: 0px;
@@ -88,7 +103,7 @@
 }
 
 .pulse {
-  position: fixed;
+  position: static;
   display: inline-block;
   margin: 7px 7px 7px 14px;
   width: 10px;

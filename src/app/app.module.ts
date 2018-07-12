@@ -16,6 +16,7 @@ import {TerminalGuard} from './terminal.guard';
 import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Angular2ImageGalleryModule} from 'angular2-image-gallery';
+import {ParticlesModule} from 'angular-particle';
 
 
 const appRoutes: Routes = [
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     TextareaAutosizeModule,
-    Angular2ImageGalleryModule
+    Angular2ImageGalleryModule,
+    ParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

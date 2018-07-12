@@ -1,4 +1,4 @@
-import {AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {AfterViewChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {terminal} from '../../data/terminal';
 
 @Component({
@@ -11,7 +11,8 @@ export class AboutComponent implements OnInit, AfterViewChecked {
 
   aboutTextHtml: string;
 
-  constructor(private cd: ChangeDetectorRef
+  constructor(
+    private cd: ChangeDetectorRef
   ) { }
 
   ngOnInit() {

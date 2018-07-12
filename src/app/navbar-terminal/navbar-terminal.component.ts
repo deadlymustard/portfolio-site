@@ -317,23 +317,25 @@ export class NavbarTerminalComponent implements OnInit, AfterViewInit, AfterView
 
   /* START INTERACTIVE COMMANDS */
   private runSudoStep(input: string, promptInput: string) {
-    if (promptInput === 'thatwasdelicious') {
-      this.terminalService.setRootAccess(true);
-      this.rootAccess = true;
-      this.logLines.push(
-        new LogLine(
-          terminal.proc[this.interactiveProcess].step[this.interactiveStep].prompt + input,
-          this.generateCommandOutput(this.interactiveCallback)
-        )
-      );
-      this.interactiveStep++;
-      this.setInteractiveMode(false);
-    } else {
-      this.logLines.push(
-        new LogLine(terminal.proc[this.interactiveProcess].step[this.interactiveStep].prompt + input, ['Sorry, try again'])
-      );
-    }
-    this.terminalInput = '';
+    this.terminalService.verifyRootPassword(promptInput).subscribe((data: any) => {
+      if (data.valid) {
+        this.terminalService.setRootAccess(true);
+        this.rootAccess = true;
+        this.logLines.push(
+          new LogLine(
+            terminal.proc[this.interactiveProcess].step[this.interactiveStep].prompt + input,
+            this.generateCommandOutput(this.interactiveCallback)
+          )
+        );
+        this.interactiveStep++;
+        this.setInteractiveMode(false);
+      } else {
+        this.logLines.push(
+          new LogLine(terminal.proc[this.interactiveProcess].step[this.interactiveStep].prompt + input, ['Sorry, try again'])
+        );
+      }
+      this.terminalInput = '';
+    });
   }
   /* END INTERACTIVE COMMANDS */
 
