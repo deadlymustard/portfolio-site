@@ -110,7 +110,6 @@ export class NavbarTerminalComponent implements OnInit, AfterViewInit, AfterView
       });
       this.appRef.tick();
     } else {
-      console.log(this.editWindowText);
       this.writeFile(this.editPath, this.editWindowText.split('\n'));
       this.editPath = '';
       this.editWindowText = '';

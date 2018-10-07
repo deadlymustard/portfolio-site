@@ -21,7 +21,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.isNavbarMobile = window.innerWidth <= 990;
-    this.navbarService
   }
 
   toggleTerminal(event) {

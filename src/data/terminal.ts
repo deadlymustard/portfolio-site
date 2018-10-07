@@ -249,10 +249,48 @@ export let terminal = {
           requireSudo: false,
           parent: '/',
           ref : {
-            'portfolio.txt': {
-              name: 'portfolio.txt',
+            'portfolio.html': {
+              name: 'portfolio.html',
               type: 'file',
-              text: ['About!']
+              text: ['<div class="card-deck">\n' +
+              '  <div class="card bg-light">\n' +
+              '    <img class="card-img-top" src="assets/img/ktg-site.png" alt="ktg fun logo">\n' +
+              '    <div class="card-vanity-bar"></div>\n' +
+              '    <div class="card-body">\n' +
+              '      <h4 class="card-title">Kevin Gilbert Scholarship Fund</h4>\n' +
+              '      <p class="card-text">A website for the KTG Scholarship Fund. Built in Angular6+/Node.js. Allows users to register and pay admission fees electronically.</p>\n' +
+              '      <a href="https://www.ktgscholarshipfund.com/about" class="card-link">Website</a>\n' +
+              '      <a href="https://github.com/deadlymustard/kgscholarshipfund" class="card-link">Github <i class="fa fa-github" aria-hidden="true"></i></a>\n' +
+              '    </div>\n' +
+              '  </div>\n' +
+              '  <div class="card bg-light">\n' +
+              '    <img class="card-img-top" src="assets/img/angular.png" alt="portfolio site screenshot">\n' +
+              '    <div class="card-vanity-bar"></div>\n' +
+              '    <div class="card-body">\n' +
+              '      <h4 class="card-title">Portfolio Site</h4>\n' +
+              '      <p class="card-text">\n' +
+              '        Believe it or not this website took some work.\n' +
+              '        There\'s some fun easter eggs hidden throughout.\n' +
+              '        Think with your stomach and you\'ll get to the root of the problem. Peeking at Github is cheating!\n' +
+              '      </p>\n' +
+              '      <a href="https://www.reganshaner.com" class="card-link">Website</a>\n' +
+              '      <a href="https://github.com/deadlymustard/portfolio-site" class="card-link">Github <i class="fa fa-github" aria-hidden="true"></i></a>\n' +
+              '    </div>\n' +
+              '  </div>\n' +
+              '  <div class="card bg-light">\n' +
+              '    <img class="card-img-top" src="assets/img/lightbox.png" alt="portfolio site screenshot">\n' +
+              '    <div class="card-vanity-bar"></div>\n' +
+              '    <div class="card-body">\n' +
+              '      <h4 class="card-title">Stranger Things Lightbox</h4>\n' +
+              '      <p class="card-text">\n' +
+              '        My initial foray into Arduino made as a gift. A light box relying on customizable LED strings.\n' +
+              '        Input messages with your phone via a bluetooth terminal and it\'ll spell it out. Coded in C, held together with duct-tape and hope.\n' +
+              '      </p>\n' +
+              '      <a href="https://www.youtube.com" class="card-link">Video <i class="fa fa-youtube" aria-hidden="true"></i></a>\n' +
+              '      <a href="https://github.com/deadlymustard/portfolio-site" class="card-link">Github <i class="fa fa-github" aria-hidden="true"></i></a>\n' +
+              '    </div>\n' +
+              '  </div>\n' +
+              '</div>\n']
             }
           }
 
