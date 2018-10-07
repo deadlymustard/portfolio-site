@@ -1,24 +1,31 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewChecked, ChangeDetectorRef, Component, ComponentFactoryResolver, HostListener, OnInit} from '@angular/core';
+import {TerminalService} from '../terminal.service';
+import {terminal} from '../../data/terminal';
 
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
-export class ResumeComponent implements OnInit {
+export class ResumeComponent implements OnInit, AfterViewChecked {
 
-  isMobile = false;
 
-  constructor() { }
+  resumeTextHtml: string;
+
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private cd: ChangeDetectorRef,
+    public terminalService: TerminalService
+  ) { }
 
 
   ngOnInit() {
-    this.isMobile = window.innerWidth <= 550;
+    this.resumeTextHtml = terminal.fs['/'].ref.resume.ref['resume.html'].text.reduce((acc, str) => `${acc}${str}`);
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.isMobile = window.innerWidth <= 550;
+  ngAfterViewChecked(): void {
+    this.resumeTextHtml = terminal.fs['/'].ref.resume.ref['resume.html'].text.reduce((acc, str) => `${acc}${str}`);
+    this.cd.detectChanges();
   }
 
 }

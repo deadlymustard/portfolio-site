@@ -15,7 +15,6 @@ const corsOptions = {
   ]
 };
 
-
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/regan-portfolio'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,9 +43,6 @@ app.get('/api/design_doc', (req, res) => {
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname+'/dist/regan-portfolio/index.html'));
 });
-
-
-
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);

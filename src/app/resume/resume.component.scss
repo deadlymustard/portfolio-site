@@ -1,58 +1,62 @@
 @import '../../styles.scss';
 @import '../app.component.scss';
 
+.resume-wrapper {
+  margin-bottom: 40px;
+}
 
-h4 {
+
+:host ::ng-deep h4 {
   font-size: 16px;
 }
 
-h5 {
+:host ::ng-deep h5 {
   font-size: 14px;
   margin-bottom: 0;
 }
 
-h6 {
+:host ::ng-deep h6 {
   font-size: 12px;
 }
 
-h5, h6 {
+:host ::ng-deep h5, h6 {
   position: relative;
 }
 
-hr {
+:host ::ng-deep hr {
   margin: 5px 0 10px 0;
 }
 
-p {
+:host ::ng-deep p {
   margin-bottom: 0;
   font-size: 12px;
 }
 
-li {
+:host ::ng-deep li {
   font-size: 12px;
 }
 
-.resume-header {
+:host ::ng-deep .resume-header {
   text-align: center;
   margin-bottom: 10px;
 }
 
-.progress {
+:host ::ng-deep .progress {
   margin: 7px 0 7px 0;
 }
 
-.badge{
+:host ::ng-deep .badge{
   border-radius: 0;
   margin-right: 5px;
 }
 
-.resume-entry {
+:host ::ng-deep .resume-entry {
   margin-bottom: 10px;
 }
 
-:host ::ng-deep .resume-side-text {
-  font-size: 12px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+@media only screen and (max-width: 450px) {
+  :host ::ng-deep .resume-side-text{
+    display: none;
+  }
 }
+

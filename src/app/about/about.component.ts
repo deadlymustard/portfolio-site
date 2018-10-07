@@ -1,5 +1,6 @@
 import {AfterViewChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {terminal} from '../../data/terminal';
+import {TerminalService} from '../terminal.service';
 
 @Component({
   selector: 'app-about',
@@ -12,7 +13,8 @@ export class AboutComponent implements OnInit, AfterViewChecked {
   aboutTextHtml: string;
 
   constructor(
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    public terminalService: TerminalService
   ) { }
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class AboutComponent implements OnInit, AfterViewChecked {
     this.aboutTextHtml = terminal.fs['/'].ref.about.ref['about.html'].text.reduce((acc, str) => `${acc}${str}`);
     this.cd.detectChanges();
   }
+
 
 
 }

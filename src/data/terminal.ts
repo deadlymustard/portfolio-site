@@ -82,7 +82,7 @@ export let terminal = {
               name: 'about.html',
               type: 'file',
               text: ['\n' +
-              '<h2>/about</h2>\n' +
+              '\n' +
               '\n' +
               '<p>\n' +
               '  Hi, my name is Regan. I’m a software engineer. I enjoy doing a lot of different things;\n' +
@@ -110,10 +110,136 @@ export let terminal = {
           requireSudo: false,
           parent: '/',
           ref : {
-            'resume.txt': {
-              name: 'resume.txt',
+            'resume.html': {
+              name: 'resume.html',
               type: 'file',
-              text: ['About!']
+              text: ['<div class="resume-wrapper">\n' +
+              '  <div class="resume-header">\n' +
+              '    <p>Regan D. Shaner</p>\n' +
+              '    <p>New York, NY</p>\n' +
+              '  </div>\n' +
+              '\n' +
+              '  <div class="resume-education">\n' +
+              '    <h4>Education</h4>\n' +
+              '    <hr />\n' +
+              '    <div class="resume-entry">\n' +
+              '      <h5>Rutgers University<span  class="resume-side-text float-right">Aug. 2013 - May 2016</span></h5>\n' +
+              '      <h6>Computer Science, B.S.<span  class="resume-side-text float-right">New Brunswick, NJ</span></h6>\n' +
+              '      <ul></ul>\n' +
+              '    </div>\n' +
+              '    <div class="resume-entry">\n' +
+              '      <h5>Jamestown Community College<span  class="resume-side-text float-right">Aug. 2011 - May 2013</span></h5>\n' +
+              '      <h6>Computer Science, A.S.<span  class="resume-side-text float-right">Olean, NY</span></h6>\n' +
+              '      <ul></ul>\n' +
+              '    </div>\n' +
+              '\n' +
+              '  </div>\n' +
+              '\n' +
+              '  <div class="resume-work">\n' +
+              '    <h4>Work Experience</h4>\n' +
+              '    <hr />\n' +
+              '    <div class="resume-entry">\n' +
+              '      <h5>Disney Streaming Services<span  class="resume-side-text float-right">April 2017 - Present</span></h5>\n' +
+              '      <h6>Associate Software Engineer<span  class="resume-side-text float-right">New York, NY</span></h6>\n' +
+              '      <ul>\n' +
+              '        <li>Develop content delivery applications to suit web, mobile, and connected-device application needs</li>\n' +
+              '        <li>Design and implement AWS architecture and deployment strategies for emerging applications</li>\n' +
+              '        <li>Support and develop new features for Homebase, a CMS system used by hundreds daily (developed in Java and rendered in a proprietary Javascript framework)</li>\n' +
+              '        <li>Developed Zodiac, an event-driven Spring Boot application that asynchronously ingests and transforms legacy partner XML data files into a newer content pipeline</li>\n' +
+              '        <li>Developed and led design of Skybox, a user-facing administrative application designed to report system status that tracks transactions through various content pipeline applications (developed in Node.js/Angular 5)</li>\n' +
+              '        <li>Developed and participated in design of Polaris, a newly built user-facing CMS system designed to manage media metadata within the content delivery pipeline (developed in Angular 6/Node.js/Microservices backend)</li>\n' +
+              '      </ul>\n' +
+              '    </div>\n' +
+              '    <div class="resume-entry">\n' +
+              '      <h5>ACI Worldwide<span  class="resume-side-text float-right">June 2016 - April 2017</span></h5>\n' +
+              '      <h6>Associate Software Engineer<span  class="resume-side-text float-right">East Brunswick, NJ</span></h6>\n' +
+              '      <ul>\n' +
+              '        <li>Supported and developed new features for ReD Shield, a transactional risk analytics engine designed to determine whether or not a credit card transaction is fraudulent (written primarily in C/Pro*C)</li>\n' +
+              '        <li>Developed Spring Boot REST microservice to arbitrarily convert currencies based on the latest reported exchange rates and integrated this service with ReD Shield</li>\n' +
+              '        <li>Migrated manually-deployed legacy systems to automated Jenkins pipeline</li>\n' +
+              '        <li>Developed Zodiac, an event-driven Spring Boot application that asynchronously ingests and transforms legacy partner XML data files into a newer content pipeline</li>\n' +
+              '        <li>Wrote shell scripts to automate build/deployment processes for software modules</li>\n' +
+              '      </ul>\n' +
+              '    </div>\n' +
+              '  </div>\n' +
+              '\n' +
+              '  <div class="resume-projects">\n' +
+              '    <h4>Projects</h4>\n' +
+              '    <hr />\n' +
+              '    <div class="resume-entry">\n' +
+              '      <h5>Kevin Gilbert Scholarship Fund<span  class="resume-side-text float-right">April 2017 - Present</span></h5>\n' +
+              '      <h6>Web App</h6>\n' +
+              '      <ul>\n' +
+              '        <li>Web application developed in Node.js/Angular 5</li>\n' +
+              '        <li>Form-driven team registration page that allows users to build teams and pay admission fees electronically</li>\n' +
+              '        <li>Firebase backend database used to store and retrieve registered teams</li>\n' +
+              '      </ul>\n' +
+              '    </div>\n' +
+              '  </div>\n' +
+              '\n' +
+              '  <div class="resume-skills">\n' +
+              '    <h4>Skills</h4>\n' +
+              '    <hr />\n' +
+              '    <div class="row">\n' +
+              '      <div class="col-md-6 col-12">\n' +
+              '        <div class="resume-entry">\n' +
+              '          <h5>Languages</h5>\n' +
+              '          <span class="badge badge-pill badge-dark">Java</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Javascript</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Typescript</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Scala</span>\n' +
+              '        </div>\n' +
+              '      </div>\n' +
+              '      <div class="col-md-6 col-12">\n' +
+              '        <div class="resume-entry">\n' +
+              '          <h5>Frameworks</h5>\n' +
+              '          <span class="badge badge-pill badge-dark">Spring Boot</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Node.js/Express</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Angular</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Akka</span>\n' +
+              '        </div>\n' +
+              '      </div>\n' +
+              '    </div>\n' +
+              '    <div class="row">\n' +
+              '      <div class="col-md-6 col-12">\n' +
+              '        <div class="resume-entry">\n' +
+              '          <h5>Database</h5>\n' +
+              '          <span class="badge badge-pill badge-dark">Oracle</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Postgres</span>\n' +
+              '          <span class="badge badge-pill badge-dark">MongoDB</span>\n' +
+              '        </div>\n' +
+              '      </div>\n' +
+              '      <div class="col-md-6 col-12">\n' +
+              '        <div class="resume-entry">\n' +
+              '          <h5>Web/Markup</h5>\n' +
+              '          <span class="badge badge-pill badge-dark">HTML</span>\n' +
+              '          <span class="badge badge-pill badge-dark">CSS</span>\n' +
+              '          <span class="badge badge-pill badge-dark">SASS</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Bootstrap</span>\n' +
+              '          <span class="badge badge-pill badge-dark">XSLT</span>\n' +
+              '        </div>\n' +
+              '      </div>\n' +
+              '    </div>\n' +
+              '    <div class="row">\n' +
+              '      <div class="col-md-6 col-12">\n' +
+              '        <div class="resume-entry">\n' +
+              '          <h5>Cloud</h5>\n' +
+              '          <span class="badge badge-pill badge-dark">AWS</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Firebase</span>\n' +
+              '        </div>\n' +
+              '      </div>\n' +
+              '      <div class="col-md-6 col-12">\n' +
+              '        <div class="resume-entry">\n' +
+              '          <h5>Continuos Integration/Deployment</h5>\n' +
+              '          <span class="badge badge-pill badge-dark">Docker</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Jenkins</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Rundeck</span>\n' +
+              '          <span class="badge badge-pill badge-dark">Puppet</span>\n' +
+              '        </div>\n' +
+              '      </div>\n' +
+              '    </div>\n' +
+              '  </div>\n' +
+              '</div>\n']
             }
           }
         },

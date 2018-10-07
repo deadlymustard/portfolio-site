@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {TerminalService} from '../terminal.service';
+import {NavbarService} from '../navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,18 @@ import {TerminalService} from '../terminal.service';
 export class NavbarComponent implements OnInit {
 
   showTerminal = false;
+  isNavbarHidden = false;
   isNavbarMobile = false;
   isNavbarCollapsed = true;
 
-  constructor(public terminalService: TerminalService) { }
+  constructor(
+    public terminalService: TerminalService,
+    private navbarService: NavbarService
+  ) { }
 
   ngOnInit() {
     this.isNavbarMobile = window.innerWidth <= 990;
+    this.navbarService
   }
 
   toggleTerminal(event) {
