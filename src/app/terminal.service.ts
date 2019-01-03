@@ -17,11 +17,11 @@ export class TerminalService {
   openTerminal = new Subject<boolean>();
 
   getRootHint(): Observable<Object> {
-    return this.http.get('//localhost:8080/api/root-hint');
+    return this.http.get('/api/root-hint');
   }
 
   verifyRootPassword(password: string): Observable<Object> {
-    return this.http.get(`//localhost:8080/api/root-verify/${password}`);
+    return this.http.get(`/api/root-verify/${password}`);
   }
 
   sendRemoteCommand(command: string, shouldOpen: boolean, shouldEvaluate: boolean) {

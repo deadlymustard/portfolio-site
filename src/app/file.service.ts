@@ -10,7 +10,7 @@ export class FileService {
   constructor(private http: HttpClient) { }
 
   getFileUrlLink(file: string): Observable<Object>  {
-    const obj = this.http.get(`http://localhost:8080/api/${file}`);
+    const obj = this.http.get(`/api/${file}`);
     return obj as Observable<Object>;
   }
 
